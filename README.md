@@ -16,6 +16,8 @@ This service is very lightweight as it uses almost no memory and CPU.
 
 The current version does not delete any messages as it may in the future support replay.
 
+JackRabbit requires an SSL cert and [LetsEncrypt](https://letsencrypt.org/) is recommended and also requires a DNS A record as `rustls` does not support IPs.
+
 ### Install
 
 ``` cargo install jackrabbit ```

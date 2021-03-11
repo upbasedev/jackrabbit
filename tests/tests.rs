@@ -13,7 +13,7 @@ async fn test1() -> Result<()> {
     config.root_store.add_server_trust_anchors(&webpki_roots::TLS_SERVER_ROOTS);
     let config = TlsConnector::from(Arc::new(config));
 
-    let (ws_stream, _) = connect_async_with_tls_connector("wss://api.dispatcher.dev", Some(config)).await.unwrap();
+    let (ws_stream, _) = connect_async_with_tls_connector("wss://my.service.com", Some(config)).await.unwrap();
     let (mut ws_write, ws_read) = ws_stream.split();
 
     let mut stream = ws_read.into_stream();
