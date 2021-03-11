@@ -6,7 +6,7 @@ edition = "2018"
 license = "MIT"
 keywords = ["tasks", "queue", "ampq", "websockets", "rabbit", "jackrabbit"]
 repository = "https://github.com/apibillme/jackrabbit"
-description = "The task service that should always be running"
+description = "The service that should always be running"
 homepage = "https://dispatcher.dev"
 readme = "README.md"
 
