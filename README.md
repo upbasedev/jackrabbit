@@ -10,7 +10,7 @@ Currently, the only feature that is not implemented is NTP timestamps as I have 
 
 See the `tests` (directory) file for more information on how to build a working client. 
 
-As this is based on [MessagePack](https://msgpack.org/index.html) - JackRabbit supports over 50 languages.
+As JackRabbit is based on [MessagePack](https://msgpack.org/index.html) over 50 languages are supported.
 
 This service is very lightweight as it uses almost no memory and CPU.
 
