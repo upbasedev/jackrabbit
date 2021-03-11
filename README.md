@@ -2,6 +2,8 @@
 
 [![crates.io](https://meritbadge.herokuapp.com/jackrabbit)](https://crates.io/crates/jackrabbit)
 
+The service that should always be running.
+
 ### Purpose
 
 The purpose of this service is to be a persistant work queue that is multi-producer and single consumer like AMQP but using Rust, MessagePack, RocksDB, and secure websockets. 
