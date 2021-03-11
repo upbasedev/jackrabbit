@@ -6,7 +6,7 @@ The service that should always be running.
 
 ### Purpose
 
-The purpose of this service is to be a persistant message queue that is multi-producer and single consumer using Rust, MessagePack, RocksDB, and secure websockets.
+The purpose of this service is to be a real-time persistant message queue that is multi-producer and single consumer using Rust, MessagePack, RocksDB, and secure websockets.
 
 This service is built to have multiple clients add messages while the main system processes the messages and a failover system connected (not getting messages - connected second - the order of connection matters). 
 
