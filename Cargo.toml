@@ -1,0 +1,26 @@
+[package]
+name = "jackrabbit"
+version = "0.0.1"
+authors = ["Bevan Hunt <bevan@bevanhunt.com>"]
+edition = "2018"
+license = "MIT"
+keywords = ["tasks", "task scheduler", "ampq"]
+description = "The task service that should always be running"
+homepage = "https://dispatcher.dev"
+readme = "README.md"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = "1"
+serde_derive = "1"
+go-flag = "0.1"
+anyhow = "1"
+serde_bytes = "0.11"
+futures = "0.3"
+async-tungstenite = { version = "0.13", features = ["tokio-runtime", "tokio-rustls"] }
+tokio-rustls = "0.22"
+webpki-roots = "0.21"
+lazy_static = "1.4"
+rocksdb = "0.15"
+rmp-serde = "0.15"
+uuid = { version = "0.8", features = ["serde", "v4"] }
