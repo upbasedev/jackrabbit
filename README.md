@@ -6,7 +6,13 @@ The service that should always be running.
 
 ### Purpose
 
-The purpose of this service is to be a persistant work queue that is multi-producer and single consumer like AMQP but using Rust, MessagePack, RocksDB, and secure websockets. 
+The purpose of this service is to be a persistant work queue that is multi-producer and single consumer using Rust, MessagePack, RocksDB, and secure websockets.
+
+This service is built to have multiple clients add messages while the main system processes the messages and a failover system connected (not getting messages - connected second - the order of connection matters). 
+
+This is useful for when you have one monolithic websocket system as an API and it needs to be updated (taken offline) - you can have the failover to do the work while updating the main system. 
+
+Then you take down the failover as it is now main and the main system becomes the main system again.
 
 Currently, the only feature that is not implemented is NTP timestamps as I have to make `broker-ntp` be async.
 
@@ -30,7 +36,6 @@ JackRabbit requires an SSL cert and [LetsEncrypt](https://letsencrypt.org/) is r
 - the private_key (path) where the private key (certificate) is located - default `certs/private_key.pem`
 
 - example: jackrabbit --save-path tmp --port 443 --cert certs/chain.pem --cert-path certs/private_key.pem
-OR
 - example: jackrabbit (using defaults)
 
 ### Service
