@@ -1,12 +1,12 @@
 [package]
 name = "jackrabbit"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Bevan Hunt <bevan@bevanhunt.com>"]
 edition = "2018"
 license = "MIT"
 keywords = ["jackrabbit", "queue", "ampq", "websockets", "bus"]
 repository = "https://github.com/apibillme/jackrabbit"
-description = "The service that should always be running"
+description = "Real-time Message Queue"
 homepage = "https://dispatcher.dev"
 readme = "README.md"
 
