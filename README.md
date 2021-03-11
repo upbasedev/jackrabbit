@@ -8,11 +8,11 @@ The service that should always be running.
 
 The purpose of this service is to be a real-time persistant message queue that is multi-producer and single consumer using Rust, MessagePack, RocksDB, and secure websockets.
 
-This service is built to have multiple clients add messages while the main system processes the messages and a failover system connected (not getting messages - connected second - the order of connection matters). 
+This service is built to have multiple clients add messages while the main system processes the messages and a failover system is connected. The failover system is not getting messages and was connected second (the conneciton order matters).
 
-This is useful for when you have one monolithic websocket system as an API and it needs to be updated (taken offline) - you can have the failover to do the work while updating the main system. 
+This is useful for when you have one monolithic websocket system as an API and it needs to be updated (taken offline) - you can have the failover do the work while updating the main system. 
 
-Then you take down the failover as it is now main and the main system becomes the main system again.
+Then you take down the failover and the main system becomes the main system again.
 
 Currently, the only feature that is not implemented is NTP timestamps as I have to make `broker-ntp` be async.
 
