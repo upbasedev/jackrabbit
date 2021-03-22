@@ -1,6 +1,6 @@
 [package]
 name = "jackrabbit"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["Bevan Hunt <bevan@bevanhunt.com>"]
 edition = "2018"
 license = "MIT"
@@ -25,3 +25,4 @@ lazy_static = "1.4"
 rocksdb = "0.15"
 rmp-serde = "0.15"
 uuid = { version = "0.8", features = ["serde", "v4"] }
+nippy = { version="2", default-features=false, features=["tokio-runtime"] }

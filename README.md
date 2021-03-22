@@ -14,11 +14,9 @@ This is useful for when you have one monolithic websocket system as an API and i
 
 Then you take down the failover and the main system becomes the main system again.
 
-Currently, the only feature that is not implemented is NTP timestamps as I have to make `broker-ntp` be async.
-
 See the `tests` (directory) file for more information on how to build a working client. 
 
-As JackRabbit is based on [MessagePack](https://msgpack.org/index.html) over 50 languages are supported.
+As JackRabbit is based on [MessagePack](https://msgpack.org/index.html) so over 50 languages are supported.
 
 This service is very lightweight as it uses almost no memory and CPU.
 
@@ -35,7 +33,7 @@ JackRabbit requires an SSL cert and [LetsEncrypt](https://letsencrypt.org/) is r
 - the chain_cert (path) where the chain certificate is located - default `certs/chain.pem`
 - the private_key (path) where the private key (certificate) is located - default `certs/private_key.pem`
 
-- example: jackrabbit --save-path tmp --port 443 --cert certs/chain.pem --cert-path certs/private_key.pem
+- example: jackrabbit --save-path="tmp" --port="443" --cert="certs/chain.pem" --cert-path="certs/private_key.pem"
 - example: jackrabbit (using defaults)
 
 ### Service

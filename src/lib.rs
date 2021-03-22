@@ -145,7 +145,7 @@ pub async fn rabbit() {
                                         let req: Req = rmp_serde::from_read_ref(&message.into_data()).unwrap();
                                         if req.command == Command::Add {
                                             let id = uuid::Uuid::new_v4();
-                                            let created_at = 0;
+                                            let created_at = nippy::get_unix_ntp_time().await.unwrap();
                                             let published = false;
                                             let published_at = 0;
                                             let saved_req = SavedReq{id, created_at, published, published_at, command: Command::Take, data: req.data};
@@ -159,8 +159,7 @@ pub async fn rabbit() {
                                                             let data = rmp_serde::to_vec_named(&saved_req).unwrap();
                                                             match ws_write.send(Message::Binary(data)).await {
                                                                 Ok(_) => {
-                                                                    let now = 0;
-                                                                    saved_req.published_at = now;
+                                                                    saved_req.published_at = nippy::get_unix_ntp_time().await.unwrap();
                                                                     saved_req.published = true;
                                                                     puts_saved_req(saved_req).unwrap();
                                                                 },
